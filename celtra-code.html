@@ -1,0 +1,53 @@
+<div class="celtra-ad-v3">
+    <script>
+        var celtraGps = (function () {
+            var coordinates = "%loc%".split(",");
+            return {
+                lat: (coordinates.length == 2) ? coordinates[0] : "",
+                lon: (coordinates.length == 2) ? coordinates[1] : ""
+            };
+        })();
+    </script>
+    <!-- externalCreativeId            = raw       %creative% -->
+    <!-- externalSiteId                = raw       %placement_id% -->
+    <!-- externalSupplierId            = raw       %pub_id% -->
+    <!-- externalSupplierName          = raw       %pub_id% -->
+    <!-- externalPlacementName         = raw       %placement_name% -->
+    <!-- externalSiteName              = urldecode %page% -->
+    <!-- externalCampaignName          = raw       %campaign_name% -->
+    <!-- externalBundleId              = raw       %bundle% -->
+    <!-- gpsLat                        = eval      celtraGps.lat -->
+    <!-- gpsLng                        = eval      celtraGps.lon -->
+    <!-- mediasmart_domain             = urldecode %domain% -->
+    <!-- mediasmart_appname            = raw       %app_name% -->
+    <!-- mediasmart_mscategories       = raw       %ms_categories% -->
+    <!-- mediasmart_rtbcategories      = raw       %rtb_categories% -->
+    <!-- mediasmart_zipcode            = raw       %zipcode% -->
+    <!-- mediasmart_distance           = raw       %distance% -->
+    <!-- mediasmart_areatext           = raw       %area_text% -->
+    <!-- mediasmart_environment        = raw       %environment% -->
+    <!-- mediasmart_page               = urldecode %page% -->
+    <!-- mediasmart_exchange           = raw       %exchange% -->
+    <!-- mediasmart_creativesize       = raw       %creative_size% -->
+    <!-- mediasmart_parentcampaignname = raw       %parent_campaign_name% -->
+    <!-- mediasmart_tagid              = raw       %tag% -->
+    <!-- track.creativeLoads           = raw       %ext_ad_loaded% -->
+    <img src="data:image/png,celtra" style="display: none" onerror="
+       (function(img) {
+           var params = {'clickUrl':'%click_url_unesc%','expandDirection':'undefined','preferredClickThroughWindow':'new','clickEvent':'advertiser','iosAdvId':'%udid_raw%','androidAdvId':'%udid_raw%','externalAdServer':'Mediasmart','tagVersion':'6'};
+           [].slice.apply(img.parentNode.childNodes).forEach(function(n) { var decfs = { urldecode: decodeURIComponent, htmldecode: function(v) { var d = document.createElement('div'); d.innerHTML = v; return d.textContent; }, eval: function(v) { return eval(v); }, raw: function(v) { return v; } }; var m; if (n.nodeType == 8 &amp;&amp; (m = n.textContent.match(/^&#92;s+([&#92;w.]+)(&#92;[.+&#92;])?&#92;s+=&#92;s+(&#92;w+)&#92;s+(.*)$/i))) { try { params[m[1]+(m[2] || '')] = decfs[m[3]](m[4].replace(/^&#92;s+|&#92;s+$/g, '')); } catch (e) {} } });
+           var req = document.createElement('script');
+           req.id = params.scriptId = 'celtra-script-' + (window.celtraScriptIndex = (window.celtraScriptIndex||0)+1);
+           params.clientTimestamp = new Date/1000;
+           params.clientTimeZoneOffsetInMinutes = new Date().getTimezoneOffset();
+           params.hostPageLoadId=window.celtraHostPageLoadId=window.celtraHostPageLoadId||(Math.random()+'').slice(2);
+           var qs = '';
+           for (var k in params) {
+               qs += '&amp;' + encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+           }
+           var src = 'https://ads.celtra.com/b7062c5b/web.js?' + qs;
+           req.src = src;
+           img.parentNode.insertBefore(req, img.nextSibling);
+       })(this);
+   " />
+</div>

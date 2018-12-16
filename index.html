@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Baidu maps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale = 1.0, user-scaleable = no" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=S3EPllWD7Z9ZfxknQ8QImWSopvsMUjMz"></script> 
+    <!--<script src="https://api.map.baidu.com/api?v=2.0&ak=S3EPllWD7Z9ZfxknQ8QImWSopvsMUjMz&callback=initialize"></script>-->
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <div id="driving_way">
+		<select>
+			<option value="0">最少时间</option>
+			<option value="1">最短距离</option>
+			<option value="2">避开高速</option>
+		</select>
+		<input type="button" id="result" value="查询"/>
+	</div>
+	<div id="r-result"></div>
+    <script src="main.js"></script>
+</body>
+</html>

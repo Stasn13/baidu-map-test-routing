@@ -1,0 +1,17 @@
+/* body{
+    background-color: #fff
+}
+#container{
+    width: 100%;
+    height: 100%;
+}
+html{
+    height:100%
+}    
+body{
+    height:100%;margin:0px;padding:0px
+}     */
+
+body, html {width: 100%;height: 100%; margin:0;font-family:"微软雅黑";}
+		#container{height:500px;width:100%;}
+		#r-result,#r-result table{width:100%;}
